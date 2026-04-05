@@ -1,47 +1,80 @@
 name: Issue
-
 description: File a bug report
-
-title: '[Issue]: '
-
-labels: ['triage']
-
+title: "[Issue]: "
+labels: ["triage"]
 body:
-  - type: checkboxes
-    label: Confirmations
-    options:
-      - label: I have read the issue reporting guidelines
-      - label: This issue is reproducible
-      - label: This is not a duplicate
-      - label: I can provide additional information if necessary
   - type: dropdown
-    label: Category
-    options:
-      - Compatible
-      - Crash
-      - Not work well
-      - Performance
-    required: true
+    id: category
+    attributes:
+      label: Category
+      description: What type of issue is this?
+      options:
+        - Compatible
+        - Crash
+        - Not work well
+        - Performance
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I can verify that I am running the mod on the latest Minecraft version the mod is released for.
+          required: true
+        - label: I can verify that the issue I am reporting exists on the latest Mod version.
+          required: true
+        - label: I checked this box anyway without reading and acknowledge that this issue will be closed if this box is checked.
+          required: false
+        - label: I acknowledge that this issue will only be fixed for the latest Minecraft version the mod is released for.
+          required: true
+
   - type: input
-    label: 'Minecraft version'
-    required: true
+    id: minecraft_version
+    attributes:
+      label: Minecraft version
+      placeholder: "e.g. 1.20.1"
+    validations:
+      required: true
+
   - type: input
-    label: 'Mod version (NOT Minecraft version)'
-    required: true
-    description: 'Please specify the version of the mod.'
+    id: mod_version
+    attributes:
+      label: Mod version (NOT Minecraft version)
+      description: Please do not put "latest" / "newest".
+      placeholder: "e.g. 2.3.1"
+    validations:
+      required: true
+
   - type: textarea
-    label: 'A description of the issue'
-    required: true
+    id: issue_description
+    attributes:
+      label: A description of the issue
+    validations:
+      required: true
+
   - type: textarea
-    label: 'Steps to reproduce'
-    required: true
-  - type: textarea
-    label: 'Expected behavior'
-    required: false
-  - type: textarea
-    label: 'Actual behavior'
-    required: false
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
   - type: input
-    label: 'Log or crash report'
-    required: true
-    description: 'Please provide a link to a gist or paste that includes the log/crash report.'
+    id: log_link
+    attributes:
+      label: Log or crash report
+      description: Please use Gist and paste the link here.
+      placeholder: "https://gist.github.com/..."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue!
