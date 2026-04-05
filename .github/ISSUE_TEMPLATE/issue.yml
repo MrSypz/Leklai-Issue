@@ -2,16 +2,32 @@ name: Issue
 description: File a bug report
 title: "[Issue]: "
 labels: ["triage"]
+
 body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please read before submitting**
+        1) Fix time depends on severity (can't play the game vs small visual glitch).
+        2) Please test on the latest mod version available on **Modrinth / CurseForge** before reporting.
+        3) Reports may be closed if required info is missing.
+        4) Fixes ship in the next version only — no backports to older versions.
+
+        **Mod versioning note**
+        This mod uses `x.y.z` where the numbers track releases like this:
+        - `z` = patch / small fix updates
+        - `y` = new features or big refactors
+        - `x` = Minecraft version change or huge refactor
+
   - type: dropdown
     id: category
     attributes:
       label: Category
       description: What type of issue is this?
       options:
-        - Compatible
+        - Compatibility
         - Crash
-        - Not work well
+        - Not working well
         - Performance
     validations:
       required: true
@@ -21,20 +37,20 @@ body:
     attributes:
       label: Confirmations
       options:
-        - label: I can verify that I am running the mod on the latest Minecraft version the mod is released for.
+        - label: "I understand fixes may be fast or slow depending on severity (can't play vs small glitch)."
           required: true
-        - label: I can verify that the issue I am reporting exists on the latest Mod version.
+        - label: "I confirm I am using the latest mod version currently published on Modrinth / CurseForge."
           required: true
-        - label: I checked this box anyway without reading and acknowledge that this issue will be closed if this box is checked.
+        - label: "I checked this box anyway without reading and acknowledge that this issue will be closed if this box is checked."
           required: false
-        - label: I acknowledge that this issue will only be fixed for the latest Minecraft version the mod is released for.
+        - label: "I understand this will be fixed in a future mod version and there will be no backport to older versions."
           required: true
 
   - type: input
     id: minecraft_version
     attributes:
       label: Minecraft version
-      placeholder: "e.g. 1.21.11"
+      placeholder: "e.g. 1.20.1"
     validations:
       required: true
 
@@ -42,15 +58,16 @@ body:
     id: mod_version
     attributes:
       label: Mod version (NOT Minecraft version)
-      description: Please do not put "latest" / "newest".
-      placeholder: "e.g. 1.0.0"
+      description: Do not write "latest" / "newest". Paste the exact mod version string.
+      placeholder: "e.g. 1.20.1-2.3.4 or 2.3.4 (whatever your release shows)"
     validations:
       required: true
 
   - type: textarea
     id: issue_description
     attributes:
-      label: A description of the issue
+      label: Description
+      description: What is the problem?
     validations:
       required: true
 
@@ -68,13 +85,8 @@ body:
   - type: input
     id: log_link
     attributes:
-      label: Log or crash report
-      description: Please use Gist and paste the link here.
+      label: Log or crash report link
+      description: Upload to Gist (recommended) and paste the link here.
       placeholder: "https://gist.github.com/..."
     validations:
       required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to report an issue!
