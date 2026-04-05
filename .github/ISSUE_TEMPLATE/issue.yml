@@ -13,12 +13,6 @@ body:
         3) Reports may be closed if required info is missing.
         4) Fixes ship in the next version only — no backports to older versions.
 
-        **Mod versioning note**
-        This mod uses `x.y.z` where the numbers track releases like this:
-        - `z` = patch / small fix updates
-        - `y` = new features or big refactors
-        - `x` = Minecraft version change or huge refactor
-
   - type: dropdown
     id: category
     attributes:
