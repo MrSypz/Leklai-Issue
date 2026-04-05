@@ -1,1 +1,5 @@
-name: Bug report\ndescription: Use this template to report a bug or suggest improvements.\n\ncategories:\n  - compatible\n  - crash\n  - not work well\n  - performance\n
+blank_issues_enabled: false
+contact_links:
+  - name: "Questions / Help"
+    url: "https://github.com/MrSypz/Leklai-Issue/discussions"
+    about: "Ask questions or get help here."
