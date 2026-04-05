@@ -77,7 +77,7 @@ body:
     id: log_link
     attributes:
       label: Log or crash report link
-      description: Upload to Gist (recommended) and paste the link here.
+      description: Upload to Gist (recommended) and paste the link here. https://gist.github.com/
       placeholder: "https://gist.github.com/..."
     validations:
       required: true
