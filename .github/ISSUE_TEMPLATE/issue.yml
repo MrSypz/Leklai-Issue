@@ -80,4 +80,4 @@ body:
       description: Upload to Gist (recommended) and paste the link here. https://gist.github.com/
       placeholder: "https://gist.github.com/..."
     validations:
-      required: true
+      required: false
