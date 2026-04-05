@@ -71,7 +71,7 @@ body:
         2. ...
         3. ...
     validations:
-      required: true
+      required: false
 
   - type: input
     id: log_link
