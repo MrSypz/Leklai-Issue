@@ -1,0 +1,47 @@
+name: Issue
+
+description: File a bug report
+
+title: '[Issue]: '
+
+labels: ['triage']
+
+body:
+  - type: checkboxes
+    label: Confirmations
+    options:
+      - label: I have read the issue reporting guidelines
+      - label: This issue is reproducible
+      - label: This is not a duplicate
+      - label: I can provide additional information if necessary
+  - type: dropdown
+    label: Category
+    options:
+      - Compatible
+      - Crash
+      - Not work well
+      - Performance
+    required: true
+  - type: input
+    label: 'Minecraft version'
+    required: true
+  - type: input
+    label: 'Mod version (NOT Minecraft version)'
+    required: true
+    description: 'Please specify the version of the mod.'
+  - type: textarea
+    label: 'A description of the issue'
+    required: true
+  - type: textarea
+    label: 'Steps to reproduce'
+    required: true
+  - type: textarea
+    label: 'Expected behavior'
+    required: false
+  - type: textarea
+    label: 'Actual behavior'
+    required: false
+  - type: input
+    label: 'Log or crash report'
+    required: true
+    description: 'Please provide a link to a gist or paste that includes the log/crash report.'
